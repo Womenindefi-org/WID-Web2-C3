@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.google.com/specimen/Public+Sans" rel="stylesheet">
+
   
   <title>Digitalbank landing page</title>
+   
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -27,6 +33,9 @@
             grayTwo: 'hsl(220, 16%, 96%)',
             grayThree: 'hsl(0, 0%, 98%)',
             whiteOne: 'hsl(0, 100%, 100%)', 
+          },
+          fontFamily: {
+            public: ['Public San', 'sans-serif'],
           }
         },
       },
@@ -36,11 +45,30 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Navigation Section -->
   
-  <section>
+  <section id="nav">
+    <nav class= "bg-white p-6 mx-auto">
+      <!-- Flex container -->
+     <div class="flex items-center justify-between">
+       <!-- Logo -->
+       <img src="Assets/logo-dark.svg" alt="Logo">
 
+       <!-- Menu Links -->
+        <div class="hidden md:flex text-grayOne space-x-6">
+          <a href="# " class="hover:text-blueOne">Home </a>
+          <a href="# " class="hover:text-blueOne">About </a>
+          <a href="# " class="hover:text-blueOne">Contact </a>
+          <a href="# "class="hover:text-blueOne">Blog </a>
+          <a href="# "class="hover:text-blueOne">Careers </a>
+        </div>
+        <!-- Button -->
+        <a href="#" class="hidden md:block px-6 py-3 rounded-full text-white font-public font-semibold bg-gradient-to-r from-cyanOne to-greenOne hover:bg-grayOne">Request Invite</a>
+     </div>
+    </nav>
   </section>
+
+  <!-- Hero -->
 
   <!-- Home
   About
