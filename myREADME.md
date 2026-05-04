@@ -35,7 +35,7 @@ Faced challenges positioning the hero mockup image to overflow above the section
 <br>
 
 ## HOW TO ACCESS THE PLATFORM
-To Access the Platform, [Click Here](digitalbank-wid.netlify.app)
+To Access the Platform, [Click Here](https://digitalbank-wid.netlify.app)
 
 <br>
 
