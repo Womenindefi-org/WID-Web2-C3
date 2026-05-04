@@ -1,3 +1,4 @@
+cat > MY_README.md << 'EOF'
 # Women In DeFi — Landing Page
 
 ## Author
