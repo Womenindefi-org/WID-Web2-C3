@@ -6,7 +6,7 @@ A responsive personal portfolio landing page built with **HTML** and **Tailwind 
 
 ## 🌐 Live Preview
 
-> Open `index.html` in your browser or use the Live Server extension in VS Code to preview locally.
+> https://wid-web2-c3-test-ten.vercel.app/
 
 ---
 
