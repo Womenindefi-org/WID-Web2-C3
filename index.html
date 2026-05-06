@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Food Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eatlife Food Landing Page</title>
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -13,20 +14,34 @@
       font-family: Arial, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: #f9f9f9;
       color: #333;
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
     a {
       text-decoration: none;
     }
 
+    /* CONTAINER */
+
     .container {
       width: 90%;
       max-width: 1200px;
       margin: auto;
+      padding: 0 15px;
     }
 
     /* HEADER */
@@ -35,24 +50,34 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: 25px 0;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 2rem;
       font-weight: bold;
       color: #DA291C;
+      white-space: nowrap;
+    }
+
+    nav {
+      flex: 1;
     }
 
     .nav-links {
       list-style: none;
       display: flex;
+      justify-content: flex-end;
+      align-items: center;
       gap: 25px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
       color: #333;
       font-weight: 500;
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
@@ -65,17 +90,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 50px;
       padding: 80px 0;
-      gap: 40px;
       flex-wrap: wrap;
     }
 
     .hero-text {
-      max-width: 500px;
+      flex: 1;
+      min-width: 280px;
     }
 
     .hero-text h1 {
-      font-size: 52px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.2;
       margin-bottom: 20px;
       color: #000;
     }
@@ -87,15 +114,22 @@
     .hero-text p {
       margin-bottom: 25px;
       color: #666;
+      max-width: 500px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .btn,
     .btn-secondary {
-      display: inline-block;
-      padding: 12px 28px;
+      padding: 14px 30px;
       border-radius: 30px;
       font-weight: bold;
-      margin-right: 10px;
+      transition: 0.3s;
+      display: inline-block;
     }
 
     .btn {
@@ -103,19 +137,29 @@
       color: white;
     }
 
+    .btn:hover {
+      background: #b91f14;
+    }
+
     .btn-secondary {
       background: #fbf1f0;
       color: #DA291C;
     }
 
-    .hero-image img {
-      width: 450px;
-      max-width: 100%;
-      border-radius: 50%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
     }
 
-    /* GENERAL SECTION */
+    .hero-image img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* GENERAL */
 
     section {
       padding: 70px 0;
@@ -123,7 +167,7 @@
 
     .section-title {
       text-align: center;
-      font-size: 36px;
+      font-size: clamp(2rem, 4vw, 3rem);
       color: #DA291C;
       margin-bottom: 50px;
     }
@@ -138,10 +182,10 @@
 
     .category-card {
       background: white;
-      padding: 25px;
+      padding: 30px 20px;
       text-align: center;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       transition: 0.3s;
     }
 
@@ -159,36 +203,7 @@
       height: 80px;
       object-fit: cover;
       border-radius: 50%;
-      margin-bottom: 10px;
-    }
-
-    /* PROMO */
-
-    .promo {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .promo-text {
-      flex: 1;
-    }
-
-    .promo-text h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .promo-text span {
-      color: #DA291C;
-    }
-
-    .promo-image img {
-      width: 500px;
-      max-width: 100%;
-      border-radius: 20px;
+      margin: 0 auto 15px;
     }
 
     /* DISHES */
@@ -204,7 +219,12 @@
       padding: 25px;
       border-radius: 20px;
       text-align: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .dish-card:hover {
+      transform: translateY(-5px);
     }
 
     .dish-card img {
@@ -212,7 +232,7 @@
       height: 120px;
       object-fit: cover;
       border-radius: 50%;
-      margin-bottom: 15px;
+      margin: 0 auto 15px;
     }
 
     .dish-card h3 {
@@ -220,10 +240,11 @@
     }
 
     .price {
+      display: block;
+      margin-top: 12px;
       color: #DA291C;
       font-weight: bold;
-      display: block;
-      margin-top: 10px;
+      font-size: 1.1rem;
     }
 
     /* FEATURES */
@@ -232,18 +253,19 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
-      text-align: center;
     }
 
     .feature-card {
       background: white;
-      padding: 25px;
+      padding: 30px 20px;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
     .feature-card h4 {
       margin: 15px 0;
+      color: #000;
     }
 
     /* TESTIMONIAL */
@@ -251,22 +273,32 @@
     .testimonial {
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: 50px;
       flex-wrap: wrap;
     }
 
-    .testimonial img {
-      width: 300px;
-      max-width: 100%;
+    .testimonial-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .testimonial-image img {
+      width: 100%;
+      max-width: 320px;
       border-radius: 50%;
     }
 
     .testimonial-box {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       flex: 1;
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .testimonial-box h2 {
+      margin-bottom: 20px;
     }
 
     .testimonial-box span {
@@ -279,29 +311,132 @@
       text-align: center;
       padding: 30px 0;
       color: #777;
+      font-size: 0.95rem;
     }
 
     /* RESPONSIVE */
 
     @media (max-width: 768px) {
-      header,
-      .hero,
-      .promo,
-      .testimonial {
-        flex-direction: column;
-        text-align: center;
+
+      /* HEADER */
+
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
       }
 
       .nav-links {
+        justify-content: flex-end;
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+      }
+
+      /* HERO */
+
+      .hero {
         flex-direction: column;
+        text-align: center;
+        padding: 50px 0;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-image img {
+        max-width: 350px;
+      }
+
+      /* TESTIMONIAL */
+
+      .testimonial {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: nowrap;
+      }
+
+      .testimonial-image {
+        flex: 0 0 120px;
+      }
+
+      .testimonial-image img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+      }
+
+      .testimonial-box {
+        padding: 20px;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+    }
+
+    /* SMALL PHONES */
+
+    @media (max-width: 480px) {
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .nav-links {
+        gap: 8px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .btn,
+      .btn-secondary {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+
+      .categories,
+      .dishes,
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial {
         gap: 15px;
       }
 
-      .hero-text h1,
-      .promo-text h2 {
-        font-size: 36px;
+      .testimonial-image {
+        flex: 0 0 90px;
+      }
+
+      .testimonial-image img {
+        width: 90px;
+        height: 90px;
+      }
+
+      .testimonial-box {
+        padding: 15px;
+        font-size: 14px;
       }
     }
+
   </style>
 </head>
 
@@ -312,6 +447,7 @@
     <!-- HEADER -->
 
     <header>
+
       <div class="logo">Eatlife</div>
 
       <nav>
@@ -323,22 +459,30 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
 
     <section class="hero">
 
       <div class="hero-text">
-        <h1>Special Food <span>Every Time</span> In Our Shop</h1>
+
+        <h1>
+          Delicious Eats Available
+          <span>Round the Clock!</span>
+        </h1>
 
         <p>
           Discover delicious meals made fresh daily with top ingredients
           and delivered right to your door.
         </p>
 
-        <a href="#" class="btn">Order Now</a>
-        <a href="#" class="btn-secondary">Watch Video</a>
+        <div class="hero-buttons">
+          <a href="#" class="btn">Order Now</a>
+          <a href="#" class="btn-secondary">Watch Video</a>
+        </div>
+
       </div>
 
       <div class="hero-image">
@@ -379,30 +523,7 @@
 
     </section>
 
-    <!-- PROMO -->
-
-    <section class="promo">
-
-      <div class="promo-text">
-        <h2>
-          Delicious Eats Available
-          <span>Round the Clock!</span>
-        </h2>
-
-        <p>
-          We provide tasty and healthy meals all day long with fast delivery
-          and premium quality service.
-        </p>
-
-        <a href="#" class="btn">Order Now</a>
-      </div>
-
-      <div class="promo-image">
-        <img src="chef.png" alt="Chef">
-      </div>
-
-    </section>
-
+    
     <!-- DISHES -->
 
     <section>
@@ -472,9 +593,12 @@
 
     <section class="testimonial">
 
-      <img src="chef 2.png" alt="Chef">
+      <div class="testimonial-image">
+        <img src="chef 2.png" alt="Chef">
+      </div>
 
       <div class="testimonial-box">
+
         <h2><span>Happy Client Says</span></h2>
 
         <p>
@@ -482,7 +606,10 @@
           Their service is top-notch and I order every week!"
         </p>
 
+        <br>
+
         <strong>- Alex Fernando</strong>
+
       </div>
 
     </section>
@@ -490,7 +617,7 @@
     <!-- FOOTER -->
 
     <footer>
-      <p>© 2026 Choplife. All rights reserved.</p>
+      <p>© 2026 Eatlife. All rights reserved.</p>
     </footer>
 
   </div>
